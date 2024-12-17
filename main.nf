@@ -118,7 +118,7 @@ workflow NFCORE_RNASEQ {
         PREPARE_GENOME.out.rrna_fastas,
         PREPARE_GENOME.out.sortmerna_index,
         PREPARE_GENOME.out.splicesites,
-        !params.remove_ribo_rna && params.remove_ribo_rna
+        params.remove_ribo_rna && ! params.sortmerna_index // make_sortmerna_index
     )
     ch_versions = ch_versions.mix(RNASEQ.out.versions)
 

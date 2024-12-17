@@ -146,7 +146,7 @@ workflow RNASEQ {
         params.skip_trimming,
         params.skip_umi_extract,
         !salmon_index_available,
-        !params.sortmerna_index && params.remove_ribo_rna,
+        make_sortmerna_index,
         params.trimmer,
         params.min_trimmed_reads,
         params.save_trimmed,
